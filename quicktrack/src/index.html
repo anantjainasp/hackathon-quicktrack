@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickTrack</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>QuickTrack</h1>
+      <nav>
+        <button id="show-tracker">Tracker</button>
+        <button id="show-analytics">Analytics</button>
+      </nav>
+    </header>
+    <main>
+      <section id="tracker">
+        <div id="timer-options">
+          <label for="preset-timer">Preset Timer:</label>
+          <select id="preset-timer">
+            <option value="">Select...</option>
+            <option value="900">15 minutes</option>
+            <option value="1800">30 minutes</option>
+            <option value="2700">45 minutes</option>
+          </select>
+          <label for="custom-timer">Custom Timer (minutes):</label>
+          <input type="number" id="custom-timer" min="1" step="1" />
+        </div>
+        <button id="start-timer">Start Timer</button>
+        <div id="timer-form" class="hidden">
+          <input type="text" id="task-desc" placeholder="Task Description" />
+          <div id="timer-display">00:00:00</div>
+          <button id="stop-timer">Stop Timer</button>
+        </div>
+        <button id="manual-entry-toggle">Log Past Event</button>
+        <div id="manual-entry-form" class="hidden">
+          <input
+            type="text"
+            id="manual-task-desc"
+            placeholder="Task Description"
+          />
+          <input type="datetime-local" id="start-time" />
+          <input type="datetime-local" id="end-time" />
+          <button id="log-manual-entry">Log Event</button>
+        </div>
+      </section>
+      <section id="logs">
+        <h2>Activity Logs</h2>
+        <ul id="log-list"></ul>
+      </section>
+      <section id="analytics" class="hidden">
+        <h2>Analytics</h2>
+        <canvas id="analytics-chart"></canvas>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
